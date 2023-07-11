@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Calculando el total</title>
+</head>
+<body>
+    <container>
+        <div class = "card">
+            <h1 class="titulo"> PRODUCTO</h1>
+            <img src ="assets/img/imagen_23.png" alt = "logo">
+            <div class = "content">
+                <p> Descripción, es un producto de alta calidad. Ideal para la temporada de invierno. </p>
+            </div>
+                <p>Valor unidad : $15.000</p>
+                <label for="quantity">Cantidad (entre  1 and 8):</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="8">
+               
+                <div>
+                    <input id="elcolor" placeholder="Color" type="color">
+                   <!--  <input type="text" name="getcolors" list="colors"/>
+                        <datalist id="colors">
+                            <option value="red"></option>
+                            <option value="blue"></option>
+                            <option value="black"></option>
+                            <option value="yellow"></option>
+                            <option value="orange"></option>
+                        </datalist>
+                        <span id="spanresult"></span>
+                    <div class="circulo" id="color"></div> -->
+                </div>
+                <button onclick="
+                /* -- capturo los valores -- */
+                const precio = 15000;
+                const cantidad_ingresada = document.querySelector('input[type=number]').value;
+                const colorentrada = document.querySelector('#elcolor').value;
+                /* -- capturo lo html donde tengo que desplegar-- */
+                const preciofinal = document.querySelector('#total');
+                const cantidadfinal = document.querySelector('#cantidad');
+                const colorsalida = document.querySelector('#color');
+                /* -- calculo y muestro en el html -- */
+                const preciocalculado = precio*cantidad_ingresada;
+                preciofinal.innerHTML = preciocalculado.toLocaleString();
+                cantidadfinal.innerHTML = cantidad_ingresada;
+                colorsalida.style.backgroundColor = colorentrada;
+               /*   const color_ingresadp = document.querySelector('#getcolors').value; */
+                console.log(precio);
+                console.log(cantidad_ingresada);
+                ">
+                    Calcular Total
+                </button>
+        </div>
+    </container>
+    <div class="contenedor__main">
+        <h1>Total: $<span id="total">________</span></h1>
+        <h1>Cantidad:<span id="cantidad" >__________</span></h1>
+        <div class="circulo" id="color"></div>
+    </div>
+    <div>
+ <!--        <script>
+            var getvalue=document.getElementsByName("getcolors")[0];
+            getvalue.addEventListener('input', function()
+            {
+                document.getElementById("spanresult").innerHTML="El valor es:"+this.value;
+                document.getElementById("color").style.backgroundColor = this.value;
+            });
+</script> -->
+    </div>
+</body>
+</html>
